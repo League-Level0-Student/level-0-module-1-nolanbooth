@@ -28,7 +28,7 @@ public class SecretMessageBox {
 		// message
 		// if they can guess the passcode
 		String guess = JOptionPane.showInputDialog(null,
-				"Ya wanna see the secret? Well ya gotta type in the password!");
+				"You want to see the secret? Well you have to type in the password!");
 		// 4. If their guess matches the password, show them the secret message
 		if (guess.contentEquals("Billy")) {
 			JOptionPane.showMessageDialog(null, secret + " That is the secret! Shhh...");
