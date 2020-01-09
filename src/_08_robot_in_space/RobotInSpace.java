@@ -1,7 +1,6 @@
 //    Copyright (c) The League of Amazing Programmers 2013-2019
 //    Level 0
 
-
 package _08_robot_in_space;
 
 import java.applet.AudioClip;
@@ -15,26 +14,46 @@ import org.jointheleague.graphical.robot.Robot;
 
 public class RobotInSpace implements KeyEventDispatcher {
 
-	Robot rob = new Robot("mini");
+	Robot rob = new Robot("batman");
 
 	/*
 	 * Make the Robot move around the screen when the arrow keys are pressed...
 	 * 
-	 * 1. IMPORTANT: For this recipe, use rob.microMove(distance) to move your
-	 * Robot and rob.setAngle(angle) to change the direction of your Robot. //Do
-	 * not add code here - go to step 2
+	 * 1. IMPORTANT: For this recipe, use rob.microMove(distance) to move your Robot
+	 * and rob.setAngle(angle) to change the direction of your Robot. //Do not add
+	 * code here - go to step 2
 	 */
 
 	private void moveRobot(int keyPressed) throws InterruptedException {
 		// 2. Print out the keyPressed variable and write down the numbers for
 		// each arrow key
-
+		System.out.println(keyPressed);
+		int up = 38;
+		int down = 40;
+		int left = 37;
+		int right = 39;
 		// 3. If the up arrow is pressed, move the Robot up the screen.
+		rob.penDown();
 
+		if (keyPressed == up) {
+			rob.setAngle(0);
+			rob.microMove(1);
+		}
+		if (keyPressed == down) {
+			rob.setAngle(180);
+			rob.microMove(1);
+		}
+		if (keyPressed == left) {
+			rob.setAngle(-90);
+			rob.microMove(1);
+		}
+		if (keyPressed == right) {
+			rob.setAngle(90);
+			rob.microMove(1);
+		}
 		// 4. If the down arrow is pressed, move the Robot down.
 
 		// 5. If the left arrow is pressed, make the Robot go left.
-
 		// 6. If right is pressed, move the Robot right.
 
 		// 7. Run your program and move the Robot to RD-2D for a surprise!
@@ -44,8 +63,6 @@ public class RobotInSpace implements KeyEventDispatcher {
 		int robotLocationX = rob.getX();
 		int robotLocationY = rob.getY();
 
-		if (robotLocationX <= 7300 && robotLocationX >= 720 && robotLocationY >= 150 && robotLocationY <= 160)
-			playEureka();
 	}
 
 	public static void main(String[] args) {
