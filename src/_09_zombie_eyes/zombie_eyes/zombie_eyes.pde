@@ -9,10 +9,13 @@ void draw() {
 noStroke();
   fill(255,255,255);
   rect(20, 35, 150, 40);
+fill(mouseX,mouseY,mouseX);
 ellipse(130, 175, 40, 65);
-fill(150, 50, 20);
+fill(mouseY, mouseX, mouseY);
 ellipse(130, 175, 25, 25);
 
-fill();
-
+fill(mouseX,mouseY,mouseX);
+ellipse(80, 175, 40, 65);
+fill(mouseY, mouseX, mouseY);
+ellipse(80, 175, 25, 25);
 }
